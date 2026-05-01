@@ -1,86 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Randy Encarnación</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randy Encarnación | Ingeniero en Sistemas</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            background: #1e293b;
-            padding: 40px;
-            text-align: center;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(2,6,23,0.8);
+    backdrop-filter: blur(10px);
+}
 
-        header p {
-            color: #38bdf8;
-            font-size: 18px;
-        }
+nav h2 {
+    color: #38bdf8;
+}
 
-        section {
-            padding: 40px;
-            max-width: 800px;
-            margin: auto;
-        }
+nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
 
-        h2 {
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 5px;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
+.hero h1 {
+    font-size: 55px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-            margin-top: 40px;
-        }
-    </style>
+.hero span {
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECCIONES */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(30,41,59,0.6);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+}
+/* ANIMACIÓN HERO */
+.hero {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* BARRAS DE HABILIDADES */
+.bar {
+    background: #0f172a;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.fill {
+    height: 10px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    width: 0;
+    animation: load 2s forwards;
+}
+
+@keyframes load {
+    from { width: 0; }
+}
+nav a:hover {
+    color: #38bdf8;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>🚀 Randy Encarnación</h1>
-    <p>Ingeniero en Sistemas y Computación</p>
-</header>
+<!-- NAV -->
+<nav>
+    <h2>Randy.dev</h2>
+    <div>
+        <a href="#">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</nav>
 
-<section>
+<!-- HERO -->
+<div class="hero">
+    <h1>Hola, soy <span>Randy Encarnación</span></h1>
+    <img src="https://i.pravatar.cc/150?img=3" style="width:150px; border-radius:50%; margin-top:20px;">
+    <p>Ingeniero en Sistemas | Redes | Desarrollo Web</p>
+    <a href="#proyectos" class="btn">Ver proyectos</a>
+</div>
+
+<!-- SOBRE MI -->
+ <section>
     <h2>👨‍💻 Sobre mí</h2>
     <div class="card">
         <p>
-            Soy estudiante de ingeniería en sistemas enfocado en redes,
-            desarrollo web y automatización. Me apasiona la tecnología
-            y la creación de soluciones digitales.
+            Estudiante de Ingeniería en Sistemas y Computacion en la Universidad Dominicana O&M enfocado en redes,
+            desarrollo web y automatización. Me interesa la ciberseguridad
+            y la creación de soluciones tecnológicas modernas.
         </p>
     </div>
+</section>
 
-    <h2>📂 Proyectos</h2>
+<section>
+    <h2>🚀 Habilidades</h2>
+
     <div class="card">
-        <p>⚾ Proyecto MLB (en desarrollo)</p>
-        <p>🌐 Aplicaciones Web</p>
+
+        <p>HTML / CSS</p>
+        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+
+        <p>Redes</p>
+        <div class="bar"><div class="fill" style="width: 80%"></div></div>
+
+        <p>Ciberseguridad</p>
+        <div class="bar"><div class="fill" style="width: 70%"></div></div>
+
+        <p>Python</p>
+        <div class="bar"><div class="fill" style="width: 75%"></div></div>
+
+    </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+    <h2>📂 Proyectos</h2>
+
+    <div class="card">
+        <h3>⚾ Proyecto MLB</h3>
+        <p>Aplicación web con estadísticas, equipos y resultados en tiempo real.</p>
     </div>
 
+    <div class="card">
+        <h3>🌐 Aplicaciones Web</h3>
+        <p>Desarrollo de sistemas con login, base de datos y diseño moderno.</p>
+    </div>
+
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
     <h2>📞 Contacto</h2>
+
     <div class="card">
         <p>Email: randyjoseencarnacionparedes@gmail.com</p>
+        <a href="https://www.linkedin.com/in/TU-USUARIO" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/randyencarnacion" target="_blank" class="btn">GitHub</a>
     </div>
 </section>
 
