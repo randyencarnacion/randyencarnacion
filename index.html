@@ -153,14 +153,37 @@ nav a:hover {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin-top: 20px;
-    border: 4px solid #38bdf8;
-    box-shadow: 0 0 25px rgba(56,189,248,0.5);
-    transition: 0.3s;
+    display: block;
+    margin: 25px auto;
+
+    border: 4px solid transparent;
+    background: linear-gradient(#0f172a, #0f172a) padding-box,
+                linear-gradient(135deg, #38bdf8, #6366f1) border-box;
+
+    box-shadow: 0 0 40px rgba(56,189,248,0.6);
+    transition: all 0.4s ease;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 30px rgba(56,189,248,0.5);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(99,102,241,0.9);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(56,189,248,0.5);
+    }
 }
 
+.profile {
+    animation: glow 3s infinite;
+}
 .profile:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 0 60px rgba(99,102,241,0.8);
+}
+.hero h1 {
+    letter-spacing: 1px;
 }
 </style>
 </head>
@@ -181,6 +204,9 @@ nav a:hover {
 <div class="hero">
     <h1>Hola, soy <span>Randy Jose Encarnación Paredes</span></h1>
     <img src="fotoRandy.jpeg" class="profile">
+    <p style="color:#38bdf8; font-size:18px; margin-top:10px;">
+    💻 Desarrollador en formación | Apasionado por la tecnología
+    </p>
     <p>Ingeniero en Sistemas y Computacion | Redes | Desarrollo Web</p>
     <a href="#proyectos" class="btn">Ver proyectos</a>
 </div>
