@@ -289,9 +289,10 @@ body {
             con mucho cariño. ❤️
         </p>
 
-        <button id="botonFlores">
-            Recibir mis flores 🌹
-        </button>
+       <button id="botonFlores" type="button"
+        onclick="mostrarDedicatoria()">
+       Recibir mis flores 🌹
+     </button>
 
         <div id="dedicatoria">
 
@@ -349,52 +350,43 @@ body {
     </main>
 
     
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    function mostrarDedicatoria() {
         const boton = document.getElementById("botonFlores");
         const dedicatoria = document.getElementById("dedicatoria");
 
-        function crearPetalos(cantidad = 20) {
-            for (let i = 0; i < cantidad; i++) {
-                const petalo = document.createElement("div");
-
-                petalo.classList.add("petalo");
-                petalo.textContent = ["🌸", "🌷", "💗", "🌹"][
-                    Math.floor(Math.random() * 4)
-                ];
-
-                petalo.style.left = Math.random() * 100 + "vw";
-                petalo.style.fontSize =
-                    (16 + Math.random() * 18) + "px";
-                petalo.style.animationDuration =
-                    (4 + Math.random() * 4) + "s";
-                petalo.style.animationDelay =
-                    Math.random() * 2 + "s";
-
-                document.body.appendChild(petalo);
-
-                setTimeout(() => petalo.remove(), 11000);
-            }
+        if (!boton || !dedicatoria) {
+            alert("No se encontró la dedicatoria. Recarga la página.");
+            return;
         }
 
-        boton.addEventListener("click", function () {
-            boton.style.display = "none";
-            dedicatoria.style.display = "block";
+        dedicatoria.style.display = "block";
+        boton.style.display = "none";
 
-            crearPetalos();
+        for (let i = 0; i < 20; i++) {
+            const petalo = document.createElement("div");
+            petalo.className = "petalo";
+            petalo.textContent = ["🌸", "🌷", "💗", "🌹"][
+                Math.floor(Math.random() * 4)
+            ];
+            petalo.style.left = Math.random() * 100 + "vw";
+            petalo.style.fontSize = (16 + Math.random() * 18) + "px";
+            petalo.style.animationDuration = (4 + Math.random() * 4) + "s";
+            petalo.style.animationDelay = Math.random() * 2 + "s";
 
-            requestAnimationFrame(function () {
-                requestAnimationFrame(function () {
-                    dedicatoria.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                });
+            document.body.appendChild(petalo);
+            setTimeout(() => petalo.remove(), 11000);
+        }
+
+        setTimeout(function () {
+            dedicatoria.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
-        });
-    });
+        }, 100);
+    }
 </script>
-
 
 </body>
 </html>
