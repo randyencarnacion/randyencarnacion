@@ -375,21 +375,17 @@ body {
         }
     }
 
-    boton.addEventListener("click", function () {
-        boton.disabled = true;
-        boton.style.display = "none";
+   boton.addEventListener("click", function () {
+    dedicatoria.style.display = "block";
+    boton.style.display = "none";
 
-        dedicatoria.style.display = "block";
-        crearPetalos(35);
+    crearPetalos(20);
 
-        // Dar tiempo al navegador móvil para mostrar la sorpresa.
-        setTimeout(function () {
-            dedicatoria.scrollIntoView({
-                behavior: "auto",
-                block: "start"
-            });
-        }, 100);
+    dedicatoria.scrollIntoView({
+        behavior: "auto",
+        block: "start"
     });
+});
 </script>
 
 </body>
